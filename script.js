@@ -1,8 +1,8 @@
 // Typewriter effect
 const phrases = [
-  "Aspiring Web Developer",
-  "AI Enthusiast",
-  "Problem Solver"
+  "Full Stack Developer",
+  "AI Automation",
+  "Cybersecurity"
 ];
 let typewriter = document.querySelector('.typewriter');
 let phraseIndex = 0, charIndex = 0;
@@ -64,24 +64,85 @@ navLinks.forEach(link => {
 
 // Dark Mode Toggle
 const themeSwitch = document.getElementById('checkbox');
-const currentTheme = localStorage.getItem('theme');
 
-if (currentTheme) {
-  document.body.classList.add(currentTheme);
-  if (currentTheme === 'dark-mode') {
-    themeSwitch.checked = true;
+if (themeSwitch) {
+  const currentTheme = localStorage.getItem('theme');
+
+  if (currentTheme) {
+    document.body.classList.add(currentTheme);
+    if (currentTheme === 'dark-mode') {
+      themeSwitch.checked = true;
+    }
   }
+
+  function switchTheme(e) {
+    if (e.target.checked) {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light-mode');
+    }
+  }
+
+  themeSwitch.addEventListener('change', switchTheme, false);
 }
 
-function switchTheme(e) {
-  if (e.target.checked) {
-    document.body.classList.add('dark-mode');
-    localStorage.setItem('theme', 'dark-mode');
-  } else {
-    document.body.classList.remove('dark-mode');
-    localStorage.setItem('theme', 'light-mode');
-  }
-}
+// Highlight active section in navbar on scroll
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.navbar-links a');
 
-themeSwitch.addEventListener('change', switchTheme, false);
-c
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+
+  // Project Filtering
+  const filterContainer = document.querySelector('.filter-buttons');
+  const projectCards = document.querySelectorAll('.projects-grid .project-card');
+
+  if (filterContainer) {
+    filterContainer.addEventListener('click', (e) => {
+      if (e.target.classList.contains('filter-btn')) {
+        filterContainer.querySelector('.active').classList.remove('active');
+        e.target.classList.add('active');
+        
+        const filterValue = e.target.dataset.filter;
+        
+        projectCards.forEach(card => {
+          const cardCategories = card.dataset.category.split(' ');
+          if (filterValue === 'all' || cardCategories.includes(filterValue)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        AOS.refresh();
+      }
+    });
+  }
+});
