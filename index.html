@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Paidi Sirisha | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <!-- Navbar -->
@@ -16,27 +19,37 @@
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#certs">Certifications</a>
+      <a href="resume.pdf" target="_blank">Resume</a>
       <a href="#contact">Contact</a>
+    </div>
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <span class="slider round"></span>
+      </label>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero">
+  <header class="hero" data-aos="fade-in">
     <h1>Hi, I'm Sirisha!</h1>
     <p class="typewriter"></p>
-    <button class="glow-btn" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
-      View My Projects
+    <button class="glow-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+      Hire Me
     </button>
-    <a href="#" class="glow-btn feature-btn">Download CV</a>
+    <a href="#" class="glow-btn feature-btn" download>Download Resume</a>
   </header>
 
   <!-- About Section -->
-  <section id="about" class="card">
+  <section id="about" class="card" data-aos="fade-up">
     <h2>About Me</h2>
     <p>
       Hello! I'm Paidi Sirisha, a passionate new age developer and AI enthusiast with a strong foundation in Python and Java. My expertise spans
    full-stack web development (HTML, CSS), and hands-on experience in AI workflow automation and prompt engineering. I'm eager
    to push the boundaries of digital innovation and developer experience.
+    </p>
+    <p>
+      As a recent graduate with a degree in Computer Science, I've embarked on a journey to transform my passion for technology into a meaningful career. My fascination with coding began with a simple "Hello, World!" and has grown into a deep-seated interest in building elegant and efficient solutions to complex problems. Outside of the world of development, I enjoy exploring new hiking trails and contributing to open-source projects. My goal is to join a forward-thinking company where I can contribute to exciting projects, continue to learn, and grow as a developer.
     </p>
     <ul>
       <li><strong>From:</strong> Hyderabad, India</li>
@@ -47,59 +60,99 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="card">
+  <section id="skills" class="card" data-aos="fade-up">
     <h2>Skills</h2>
     <div class="skills-container">
       <div class="skill-category">
-        <h3>Programming</h3>
-        <ul>
-          <li>Python</li>
-          <li>Java</li>
-        </ul>
+        <h3>Frontend</h3>
+        <div class="skills-grid">
+          <div class="skill-item"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+          <div class="skill-item"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+          <div class="skill-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+          <div class="skill-item"><i class="devicon-react-original colored"></i><span>React</span></div>
+        </div>
       </div>
       <div class="skill-category">
-        <h3>Web Development</h3>
-        <ul>
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>JavaScript</li>
-          <li>React JS</li>
-        </ul>
+        <h3>Backend</h3>
+        <div class="skills-grid">
+          <div class="skill-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+          <div class="skill-item"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+          <div class="skill-item"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+        </div>
       </div>
       <div class="skill-category">
-        <h3>Databases</h3>
-        <ul>
-          <li>SQL</li>
-        </ul>
+        <h3>Tools & Platforms</h3>
+        <div class="skills-grid">
+          <div class="skill-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+          <div class="skill-item"><i class="devicon-github-original colored"></i><span>GitHub</span></div>
+          <div class="skill-item"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
+          <div class="skill-item"><i class="devicon-amazonwebservices-original colored"></i><span>AWS</span></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="card">
+  <section id="projects" class="card" data-aos="fade-up">
     <h2>Projects</h2>
-    <div class="project-card">
-      <h3>AI Interview Performance Analysis</h3>
-      <p>
-        Developed an AI-based tool to analyze and predict interview performance using audio features and NLP. Helped recruiters assess candidates' emotional and psychological profiles.
-      </p>
-      <p><strong>Tech Stack:</strong> Python, Scikit-learn, NLP, Audio Processing</p>
-      <a href="#" class="glow-btn">Live Demo</a>
-      <a href="#" class="glow-btn feature-btn">Source Code</a>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="python">Python</button>
+      <button class="filter-btn" data-filter="java">Java</button>
+      <button class="filter-btn" data-filter="react">React</button>
+      <button class="filter-btn" data-filter="js">JavaScript</button>
     </div>
-    <div class="project-card">
-      <h3>Symmetric Algorithms Comparison</h3>
-      <p>
-        Compared AES and DES encryption algorithms to assess speed, complexity, and security for data transmission.
-      </p>
-      <p><strong>Tech Stack:</strong> Java, Cryptography</p>
-      <a href="#" class="glow-btn">Live Demo</a>
-      <a href="#" class="glow-btn feature-btn">Source Code</a>
+    <div class="projects-grid">
+      <div class="project-card" data-category="python">
+        <h3>AI Interview Performance Analysis</h3>
+        <p>
+          Developed an AI-based tool to analyze and predict interview performance using audio features and NLP. Helped recruiters assess candidates' emotional and psychological profiles.
+        </p>
+        <p><strong>Tech Stack:</strong> Python, Scikit-learn, NLP, Audio Processing</p>
+        <a href="#" class="glow-btn">Live Demo</a>
+        <a href="#" class="glow-btn feature-btn">Source Code</a>
+      </div>
+      <div class="project-card" data-category="java">
+        <h3>Symmetric Algorithms Comparison</h3>
+        <p>
+          Compared AES and DES encryption algorithms to assess speed, complexity, and security for data transmission.
+        </p>
+        <p><strong>Tech Stack:</strong> Java, Cryptography</p>
+        <a href="#" class="glow-btn">Live Demo</a>
+        <a href="#" class="glow-btn feature-btn">Source Code</a>
+      </div>
+      <div class="project-card" data-category="react js">
+        <h3>E-commerce Website</h3>
+        <p>
+          A full-featured e-commerce website with product listings, a shopping cart, and a checkout system, built with performance and scalability in mind.
+        </p>
+        <p><strong>Tech Stack:</strong> React, Node.js, Express, MongoDB</p>
+        <a href="#" class="glow-btn">Live Demo</a>
+        <a href="#" class="glow-btn feature-btn">Source Code</a>
+      </div>
+      <div class="project-card" data-category="python">
+        <h3>Personal Blog Platform</h3>
+        <p>
+          A dynamic personal blog where users can create, edit, and delete posts. Includes a markdown editor for a seamless writing experience.
+        </p>
+        <p><strong>Tech Stack:</strong> Python, Django, SQLite</p>
+        <a href="#" class="glow-btn">Live Demo</a>
+        <a href="#" class="glow-btn feature-btn">Source Code</a>
+      </div>
+      <div class="project-card" data-category="js">
+        <h3>Weather Dashboard</h3>
+        <p>
+          A clean weather dashboard that displays the current weather and a 5-day forecast for any searched city, using the OpenWeatherMap API.
+        </p>
+        <p><strong>Tech Stack:</strong> JavaScript, HTML, CSS, API</p>
+        <a href="#" class="glow-btn">Live Demo</a>
+        <a href="#" class="glow-btn feature-btn">Source Code</a>
+      </div>
     </div>
   </section>
 
   <!-- Certifications Section -->
-  <section id="certs" class="card">
+  <section id="certs" class="card" data-aos="fade-up">
     <h2>Certifications & Achievements</h2>
     <ul>
       <li>Smart India Hackathon 2022 Qualified</li>
@@ -111,12 +164,13 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="card contact">
+  <section id="contact" class="card contact" data-aos="fade-up">
     <h2>Contact Me</h2>
-    <p>
-      Email: <a href="mailto:sirishapaidi02@gmail.com">sirishapaidi02@gmail.com</a><br />
-      LinkedIn: <a href="https://www.linkedin.com/in/paidi-sirisha/" target="_blank">paidi-sirisha</a>
-    </p>
+    <div class="contact-links">
+      <a href="mailto:sirishapaidi02@gmail.com" aria-label="Email" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/paidi-sirisha/" target="_blank" aria-label="LinkedIn" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#" target="_blank" aria-label="GitHub" class="social-icon"><i class="fa-brands fa-github"></i></a>
+    </div>
     <form id="contactForm">
       <input type="text" placeholder="Your Name" required /><br />
       <input type="email" placeholder="Your Email" required /><br />
@@ -130,8 +184,14 @@
   <button id="scrollTopBtn" aria-label="Back to top">&#8679;</button>
 
   <footer>
-    &copy; 2025 Paidi Sirisha. All rights reserved.
+    <div class="footer-socials">
+      <a href="mailto:sirishapaidi02@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/paidi-sirisha/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+    </div>
+    <p>&copy; 2025 Paidi Sirisha. All rights reserved.</p>
   </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
