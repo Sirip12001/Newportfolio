@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paidi Sirisha | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-title">Paidi Sirisha</div>
+    <a class="icon" id="menu-toggle">&#9776;</a>
+    <div class="navbar-links" id="navbar-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Hi, I'm Sirisha!</h1>
+    <p class="typewriter"></p>
+    <button class="glow-btn" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
+      View My Projects
+    </button>
+    <a href="#" class="glow-btn feature-btn">Download CV</a>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="card">
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm Paidi Sirisha, a passionate new age developer and AI enthusiast with a strong foundation in Python and Java. My expertise spans
+   full-stack web development (HTML, CSS), and hands-on experience in AI workflow automation and prompt engineering. I'm eager
+   to push the boundaries of digital innovation and developer experience.
+    </p>
+    <ul>
+      <li><strong>From:</strong> Hyderabad, India</li>
+      <li><strong>Lives In:</strong> Hyderabad, India</li>
+      <li><strong>Age:</strong> 22</li>
+      <li><strong>Gender:</strong> Female</li>
+    </ul>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="card">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3>Programming</h3>
+        <ul>
+          <li>Python</li>
+          <li>Java</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Web Development</h3>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>React JS</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Databases</h3>
+        <ul>
+          <li>SQL</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="card">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>AI Interview Performance Analysis</h3>
+      <p>
+        Developed an AI-based tool to analyze and predict interview performance using audio features and NLP. Helped recruiters assess candidates' emotional and psychological profiles.
+      </p>
+      <p><strong>Tech Stack:</strong> Python, Scikit-learn, NLP, Audio Processing</p>
+      <a href="#" class="glow-btn">Live Demo</a>
+      <a href="#" class="glow-btn feature-btn">Source Code</a>
+    </div>
+    <div class="project-card">
+      <h3>Symmetric Algorithms Comparison</h3>
+      <p>
+        Compared AES and DES encryption algorithms to assess speed, complexity, and security for data transmission.
+      </p>
+      <p><strong>Tech Stack:</strong> Java, Cryptography</p>
+      <a href="#" class="glow-btn">Live Demo</a>
+      <a href="#" class="glow-btn feature-btn">Source Code</a>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certs" class="card">
+    <h2>Certifications & Achievements</h2>
+    <ul>
+      <li>Smart India Hackathon 2022 Qualified</li>
+      <li>Prompt Engineering for Generative AI</li>
+      <li>AWS Cloud Foundations, AWS Academy</li>
+      <li>Robo Race 2019, GMRIT</li>
+      <li>Paper Presentations &amp; 5G Technology Workshop</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="card contact">
+    <h2>Contact Me</h2>
+    <p>
+      Email: <a href="mailto:sirishapaidi02@gmail.com">sirishapaidi02@gmail.com</a><br />
+      LinkedIn: <a href="https://www.linkedin.com/in/paidi-sirisha/" target="_blank">paidi-sirisha</a>
+    </p>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required /><br />
+      <input type="email" placeholder="Your Email" required /><br />
+      <textarea placeholder="Your Message" required></textarea><br />
+      <button type="submit" class="glow-btn">Send</button>
+    </form>
+    <div id="formMsg"></div>
+  </section>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" aria-label="Back to top">&#8679;</button>
+
+  <footer>
+    &copy; 2025 Paidi Sirisha. All rights reserved.
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
